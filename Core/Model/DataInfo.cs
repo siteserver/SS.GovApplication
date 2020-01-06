@@ -1,121 +1,120 @@
 ﻿using System;
-using System.Collections.Generic;
+using Datory;
 
 namespace SS.GovApplication.Core.Model
 {
-    public class DataInfo : AttributesImpl
+    [Table("ss_gov_application_data")]
+    public class DataInfo : Entity
     {
-        public int Id { get; set; }
-
+        [TableColumn]
         public int SiteId { get; set; }
 
-        public DateTime AddDate { get; set; }
+        [TableColumn]
+        public DateTime? AddDate { get; set; }
 
+        [TableColumn]
         public string QueryCode { get; set; }
 
-        public string State { get; set; }
-
-        public bool IsReplied { get; set; }
-
-        public DateTime ReplyDate { get; set; }
-
-        public string ReplyContent { get; set; }
-
-        public bool IsOrganization { get; set; }
-
-        public string CivicName { get; set; }
-
-        public string CivicOrganization { get; set; }
-
-        public string CivicCardType { get; set; }
-
-        public string CivicCardNo { get; set; }
-
-        public string CivicPhone { get; set; }
-
-        public string CivicPostCode { get; set; }
-
-        public string CivicAddress { get; set; }
-
-        public string CivicEmail { get; set; }
-
-        public string CivicFax { get; set; }
-
-        public string OrgName { get; set; }
-
-        public string OrgUnitCode { get; set; }
-
-        public string OrgLegalPerson { get; set; }
-
-        public string OrgLinkName { get; set; }
-
-        public string OrgPhone { get; set; }
-
-        public string OrgPostCode { get; set; }
-
-        public string OrgAddress { get; set; }
-
-        public string OrgEmail { get; set; }
-
-        public string OrgFax { get; set; }
-
-        public string Title { get; set; }
-
-        public string Content { get; set; }
-
-        public string Purpose { get; set; }
-
-        public bool IsApplyFree { get; set; }
-
-        public string ProvideType { get; set; }
-
-        public string ObtainType { get; set; }
-
-        public string DepartmentName { get; set; }
-
+        [TableColumn]
         public int DepartmentId { get; set; }
 
-        public string AttributeValues { get; set; }
+        [TableColumn]
+        public bool IsCompleted { get; set; }
 
-        public override Dictionary<string, object> ToDictionary()
-        {
-            var dict = base.ToDictionary();
-            dict[nameof(Id)] = Id;
-            dict[nameof(AddDate)] = AddDate;
-            dict[nameof(QueryCode)] = QueryCode;
-            dict[nameof(State)] = State;
-            dict[nameof(IsReplied)] = IsReplied;
-            dict[nameof(ReplyDate)] = ReplyDate;
-            dict[nameof(ReplyContent)] = ReplyContent;
-            dict[nameof(IsOrganization)] = IsOrganization;
-            dict[nameof(CivicName)] = CivicName;
-            dict[nameof(CivicOrganization)] = CivicOrganization;
-            dict[nameof(CivicCardType)] = CivicCardType;
-            dict[nameof(CivicCardNo)] = CivicCardNo;
-            dict[nameof(CivicPhone)] = CivicPhone;
-            dict[nameof(CivicPostCode)] = CivicPostCode;
-            dict[nameof(CivicAddress)] = CivicAddress;
-            dict[nameof(CivicEmail)] = CivicEmail;
-            dict[nameof(CivicFax)] = CivicFax;
-            dict[nameof(OrgName)] = OrgName;
-            dict[nameof(OrgUnitCode)] = OrgUnitCode;
-            dict[nameof(OrgLegalPerson)] = OrgLegalPerson;
-            dict[nameof(OrgLinkName)] = OrgLinkName;
-            dict[nameof(OrgPhone)] = OrgPhone;
-            dict[nameof(OrgPostCode)] = OrgPostCode;
-            dict[nameof(OrgAddress)] = OrgAddress;
-            dict[nameof(OrgEmail)] = OrgEmail;
-            dict[nameof(OrgFax)] = OrgFax;
-            dict[nameof(Title)] = Title;
-            dict[nameof(Content)] = Content;
-            dict[nameof(Purpose)] = Purpose;
-            dict[nameof(IsApplyFree)] = IsApplyFree;
-            dict[nameof(ProvideType)] = ProvideType;
-            dict[nameof(ObtainType)] = ObtainType;
-            dict[nameof(DepartmentName)] = DepartmentName;
-            dict[nameof(DepartmentId)] = DepartmentId;
+        [TableColumn]
+        public string State { get; set; }
 
-            return dict;
-        }
+        [TableColumn(Text = true)]
+        public string DenyReason { get; set; }
+
+        [TableColumn(Text = true)]
+        public string RedoComment { get; set; }
+
+        [TableColumn(Text = true)]
+        public string ReplyContent { get; set; }
+
+        [TableColumn]
+        public bool IsReplyFiles { get; set; }
+
+        [TableColumn]
+        public DateTime? ReplyDate { get; set; }
+
+        [TableColumn]
+        public bool IsOrganization { get; set; }
+
+        [TableColumn]
+        public string CivicName { get; set; }
+
+        [TableColumn]
+        public string CivicOrganization { get; set; }
+
+        [TableColumn]
+        public string CivicCardType { get; set; }
+
+        [TableColumn]
+        public string CivicCardNo { get; set; }
+
+        [TableColumn]
+        public string CivicPhone { get; set; }
+
+        [TableColumn]
+        public string CivicPostCode { get; set; }
+
+        [TableColumn]
+        public string CivicAddress { get; set; }
+
+        [TableColumn]
+        public string CivicEmail { get; set; }
+
+        [TableColumn]
+        public string CivicFax { get; set; }
+
+        [TableColumn]
+        public string OrgName { get; set; }
+
+        [TableColumn]
+        public string OrgUnitCode { get; set; }
+
+        [TableColumn]
+        public string OrgLegalPerson { get; set; }
+
+        [TableColumn]
+        public string OrgLinkName { get; set; }
+
+        [TableColumn]
+        public string OrgPhone { get; set; }
+
+        [TableColumn]
+        public string OrgPostCode { get; set; }
+
+        [TableColumn]
+        public string OrgAddress { get; set; }
+
+        [TableColumn]
+        public string OrgEmail { get; set; }
+
+        [TableColumn]
+        public string OrgFax { get; set; }
+
+        [TableColumn]
+        public string Title { get; set; }
+
+        [TableColumn(Text = true)]
+        public string Content { get; set; }
+
+        [TableColumn]
+        public string Purpose { get; set; }
+
+        [TableColumn]
+        public bool IsApplyFree { get; set; }
+
+        [TableColumn]
+        public string ProvideType { get; set; }
+
+        [TableColumn]
+        public string ObtainType { get; set; }
+
+        [TableColumn]
+        public string DepartmentName { get; set; }
     }
 }

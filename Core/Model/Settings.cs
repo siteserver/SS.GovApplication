@@ -1,9 +1,15 @@
-﻿using System;
-
-namespace SS.GovApplication.Core.Model
+﻿namespace SS.GovApplication.Core.Model
 {
     public class Settings
     {
-        public bool IsCaptcha { get; set; }
+        public bool IsClosed { get; set; }
+
+        public int DaysWarning { get; set; }
+
+        public int DaysDeadline { get; set; }
+
+        public bool IsDeleteAllowed { get; set; }
+
+        public bool IsSelectDepartment { get; set; }
     }
 }

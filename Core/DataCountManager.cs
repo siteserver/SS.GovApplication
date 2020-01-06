@@ -26,7 +26,7 @@ namespace SS.GovApplication.Core
                     retval = CacheUtils.Get<Dictionary<string, int>>(cacheKey);
                     if (retval == null)
                     {
-                        retval = DataDao.GetDataCounts(siteId);
+                        retval = Main.DataRepository.GetDataCounts(siteId);
 
                         CacheUtils.InsertHours(cacheKey, retval, 1);
                     }
@@ -42,10 +42,24 @@ namespace SS.GovApplication.Core
             }
         }
 
-        public static int GetCount(int siteId, string state)
+        public static int GetCount(int siteId, List<DataState> stateList)
+        {
+            if (stateList.Count == 0)
+            {
+                return GetTotalCount(siteId);
+            }
+            var count = 0;
+            foreach (var dataState in stateList)
+            {
+                count += GetCount(siteId, dataState);
+            }
+            return count;
+        }
+
+        public static int GetCount(int siteId, DataState state)
         {
             var entries = DataCountManagerCache.GetDataCountsCache(siteId);
-            return entries[state];
+            return entries[state.Value];
         }
 
         public static int GetTotalCount(int siteId)

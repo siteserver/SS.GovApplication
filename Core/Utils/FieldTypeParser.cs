@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Web;
-using SiteServer.Plugin;
-using SS.GovApplication.Core.Model;
-
-namespace SS.GovApplication.Core.Utils
+﻿namespace SS.GovApplication.Core.Utils
 {
     //public class FieldTypeParser
     //{
@@ -154,7 +147,7 @@ namespace SS.GovApplication.Core.Utils
     //        var items = fieldInfo.Items ?? new List<FieldItemInfo>();
 
     //        var selectedValues = !string.IsNullOrEmpty(fieldInfo.Value) ? fieldInfo.Value : string.Empty;
-    //        var selectedValueList = Utils.StringCollectionToStringList(selectedValues);
+    //        var selectedValueList = ApplicationUtils.StringCollectionToStringList(selectedValues);
 
     //        builder.Append($@"<select multiple style=""height: 130px"" {attributes}>");
     //        foreach (var item in items)

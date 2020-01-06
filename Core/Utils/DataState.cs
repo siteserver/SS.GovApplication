@@ -47,6 +47,17 @@ namespace SS.GovApplication.Core.Utils
             Checked
         };
 
+        public static DataState ToDataState(string state)
+        {
+            if (StringUtils.EqualsIgnoreCase(state, New.Value)) return New;
+            if (StringUtils.EqualsIgnoreCase(state, Denied.Value)) return Denied;
+            if (StringUtils.EqualsIgnoreCase(state, Accepted.Value)) return Accepted;
+            if (StringUtils.EqualsIgnoreCase(state, Redo.Value)) return Redo;
+            if (StringUtils.EqualsIgnoreCase(state, Replied.Value)) return Replied;
+            if (StringUtils.EqualsIgnoreCase(state, Checked.Value)) return Checked;
+            throw new Exception("state not exists");
+        }
+
         internal DataState(string value)
         {
             if (string.IsNullOrEmpty(value))
